@@ -1,0 +1,47 @@
+--- libannodex-0.7.3/src/libannodex/Makefile.am.orig	2005-09-19 06:50:33.000000000 +0200
++++ libannodex-0.7.3/src/libannodex/Makefile.am	2006-11-18 00:23:55.603003000 +0100
+@@ -8,8 +8,8 @@
+ 
+ if ANX_CONFIG_WRITE
+ anx_write_sources = fix_dl.c fix_dl.h
+-anx_write_includes = $(INCLTDL)
+-anx_write_libs = $(LIBLTDL)
++anx_write_includes =
++anx_write_libs = -ldl
+ endif
+ 
+ INCLUDES = $(anx_write_includes) -I$(top_srcdir)/include @OGGZ_CFLAGS@
+--- libannodex-0.7.3/configure.ac.orig	2006-02-07 03:34:28.000000000 +0100
++++ libannodex-0.7.3/configure.ac	2006-11-18 00:23:13.324360750 +0100
+@@ -12,10 +12,6 @@
+ SHARED_VERSION_INFO="4:0:4"
+ SHLIB_VERSION_ARG=""
+ 
+-# Setup libltdl -- this must come before AC_PROG_LIBTOOL
+-AC_LIBLTDL_CONVENIENCE
+-AC_SUBST(INCLTDL)
+-AC_SUBST(LIBLTDL)
+ AC_LIBTOOL_DLOPEN
+ 
+ # Checks for programs.
+@@ -172,9 +168,6 @@
+ AC_SUBST(SIZE64)
+ 
+ 
+-# Configures libltdl
+-AC_CONFIG_SUBDIRS(libltdl)
+-
+ dnl
+ dnl  Detect oggz
+ dnl
+--- libannodex-0.7.3/Makefile.am.orig	2005-09-19 06:50:35.000000000 +0200
++++ libannodex-0.7.3/Makefile.am	2006-11-18 00:23:29.165350750 +0100
+@@ -1,7 +1,7 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+ if ANX_CONFIG_WRITE
+-SUBDIRS = doc libltdl include src
++SUBDIRS = doc include src
+ else
+ SUBDIRS = doc include src
+ endif
