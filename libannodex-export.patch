@@ -1,0 +1,21 @@
+--- libannodex-0.7.3/src/libannodex/Version_script.in.orig	2005-09-19 06:50:33.000000000 +0200
++++ libannodex-0.7.3/src/libannodex/Version_script.in	2006-11-18 02:07:18.686671500 +0100
+@@ -74,6 +74,7 @@
+ 		anx_importer_unregister;
+ 		anx_importer_find;
+ 
++		anx_write_get_next_page_size;
+ 		anx_write_import;
+ 		anx_write_set_anno_callbacks;
+ 		anx_write_get_anno_user_data;
+--- libannodex-0.7.3/src/libannodex/anx_write.c.orig	2005-10-31 01:15:13.000000000 +0100
++++ libannodex-0.7.3/src/libannodex/anx_write.c	2006-11-18 02:28:46.487154000 +0100
+@@ -1479,7 +1479,7 @@
+ }
+ 
+ long
+-anx_get_next_page_size (ANNODEX * annodex)
++anx_write_get_next_page_size (ANNODEX * annodex)
+ {
+   if (annodex == NULL) return -1L;
+ 
