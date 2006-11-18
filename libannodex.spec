@@ -9,6 +9,7 @@ Source0:	http://annodex.net/software/libannodex/download/%{name}-%{version}.tar.
 # Source0-md5:	504cf036cf04512260006a986926177f
 Patch0:		%{name}-libcmml.patch
 Patch1:		%{name}-no-ltdl.patch
+Patch2:		%{name}-export.patch
 URL:		http://annodex.net/software/libannodex/index.html
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -61,6 +62,7 @@ Statyczna biblioteka libannodex.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
