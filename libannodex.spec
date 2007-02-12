@@ -1,5 +1,5 @@
 Summary:	A library for reading and writing annodexed media
-Summary(pl):	Biblioteka do odczytu i zapisu medi體 w formacie Annodex
+Summary(pl.UTF-8):   Biblioteka do odczytu i zapisu medi贸w w formacie Annodex
 Name:		libannodex
 Version:	0.7.3
 Release:	1
@@ -27,13 +27,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libannodex is a library to provide reading and writing of Annodex
 files and streams.
 
-%description -l pl
-libannodex to biblioteka pozwalaj眂a na odczyt i zapis plik體 i
+%description -l pl.UTF-8
+libannodex to biblioteka pozwalaj膮ca na odczyt i zapis plik贸w i
 strumieni w formacie Annodex.
 
 %package devel
 Summary:	Header files for libannodex library
-Summary(pl):	Pliki nag丑wkowe biblioteki libannodex
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki libannodex
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libcmml-devel >= 0.9.2
@@ -43,19 +43,19 @@ Requires:	libsndfile-devel >= 1.0.0
 %description devel
 Header files for libannodex library.
 
-%description devel -l pl
-Pliki nag丑wkowe biblioteki libannodex.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe biblioteki libannodex.
 
 %package static
 Summary:	Static libannodex library
-Summary(pl):	Statyczna biblioteka libannodex
+Summary(pl.UTF-8):   Statyczna biblioteka libannodex
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libannodex library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libannodex.
 
 %prep
