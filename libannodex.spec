@@ -1,5 +1,5 @@
 Summary:	A library for reading and writing annodexed media
-Summary(pl.UTF-8):   Biblioteka do odczytu i zapisu mediów w formacie Annodex
+Summary(pl.UTF-8):	Biblioteka do odczytu i zapisu mediów w formacie Annodex
 Name:		libannodex
 Version:	0.7.3
 Release:	1
@@ -33,7 +33,7 @@ strumieni w formacie Annodex.
 
 %package devel
 Summary:	Header files for libannodex library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libannodex
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libannodex
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libcmml-devel >= 0.9.2
@@ -48,7 +48,7 @@ Pliki nagłówkowe biblioteki libannodex.
 
 %package static
 Summary:	Static libannodex library
-Summary(pl.UTF-8):   Statyczna biblioteka libannodex
+Summary(pl.UTF-8):	Statyczna biblioteka libannodex
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
