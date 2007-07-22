@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	A library for reading and writing annodexed media
 Summary(pl.UTF-8):	Biblioteka do odczytu i zapisu mediów w formacie Annodex
 Name:		libannodex
@@ -13,6 +16,7 @@ Patch2:		%{name}-export.patch
 URL:		http://annodex.net/software/libannodex/index.html
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	docbook-to-man
 BuildRequires:	libcmml-devel >= 0.9.2
 BuildRequires:	liboggz-devel >= 0.9.1
 BuildRequires:	libsndfile-devel >= 1.0.0
@@ -70,7 +74,8 @@ Statyczna biblioteka libannodex.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -106,6 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/annodex
 %{_pkgconfigdir}/annodex.pc
 
+%if %{with static}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libannodex.a
+%endif
